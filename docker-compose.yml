@@ -1,7 +1,7 @@
 services:
   web:
-    image: nginx:alpine
+    image: nginx:alpine # 使用するDockerイメージ（nginxの軽量バージョンであるalpineイメージ）を指定します
     ports:
-      - "8080:80"
+      - "8080:80" # ホストの8080ポートをコンテナの80ポートにマッピングします（ホストのブラウザから http://localhost:8080 でアクセス可能にする）
     volumes:
-      - ./html:/usr/share/nginx/html
+      - ./html:/usr/share/nginx/html # ローカルでファイル編集を反映させるため、ホストの./htmlディレクトリをコンテナの/usr/share/nginx/html（nginxのドキュメントルート）にマウントします
